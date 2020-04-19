@@ -6,12 +6,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{D25816D5-D647-49C1-AC52-0683BDEFDC86}</ProjectGuid>
+    <ProjectGuid>{AA1E0BFB-01E1-4354-9C5F-5F5E050AA2CF}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ReservationSystem</RootNamespace>
-    <AssemblyName>ReservationSystem</AssemblyName>
+    <RootNamespace>AirlinesReservation</RootNamespace>
+    <AssemblyName>AirlinesReservation</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -95,9 +95,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>63354</DevelopmentServerPort>
+          <DevelopmentServerPort>63764</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:63354/</IISUrl>
+          <IISUrl>http://localhost:63764/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
