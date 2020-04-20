@@ -1,6 +1,8 @@
 ﻿namespace AirlinesReservation.Models
 {
     using System;
+    using System.Collections.Generic;
+    using System.Dynamic;
 
     public class User
     {
@@ -10,5 +12,6 @@
         public DateTime DateOfBirth { get; set; }
         public DateTime CreationTime { get; set; }
         public Sex Gender { get; set; }
+        public List<Reservation> Reservation { get; set; }
     }
 }

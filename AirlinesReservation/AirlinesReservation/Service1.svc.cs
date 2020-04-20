@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AirlinesReservation.DB;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -14,6 +15,7 @@ namespace AirlinesReservation
     {
         public string GetData(int value)
         {
+            InitialDB.Init();
             return string.Format("You entered: {0}", value);
         }
 

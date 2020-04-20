@@ -2,8 +2,7 @@
 {
     public class Ticket
     {
+        public int Id { get; set; }
         public TicketType Type { get; set; }
-        public Reservation Reservation { get; set; }
-        public double Cost { get; set; }
     }
 }
