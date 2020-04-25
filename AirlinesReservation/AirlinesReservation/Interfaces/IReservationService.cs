@@ -16,9 +16,10 @@ namespace AirlinesReservation.Services
         [OperationContract]
         void AddReservation(Flight flight, User user);
         [OperationContract]
-        byte[] ConfirmReservation(User user); // zwrócić pdf zakodowane w MIME
+        bool CheckReservation(Guid number, string username);
         [OperationContract]
-        bool CheckReservation(Guid number);
-
+        List<Reservation> ShowAllReservation(string username);
+        [OperationContract]
+        byte[] GetConfirmation(User user);
     }
 }

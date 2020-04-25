@@ -5,6 +5,11 @@ VisualStudioVersion = 16.0.29911.84
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirlinesReservation", "AirlinesReservation\AirlinesReservation.csproj", "{AA1E0BFB-01E1-4354-9C5F-5F5E050AA2CF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirlinesClient", "AirlinesClient\AirlinesClient.csproj", "{C1A2D0D6-5940-42BB-8D5F-D0C73393CF64}"
+	ProjectSection(ProjectDependencies) = postProject
+		{AA1E0BFB-01E1-4354-9C5F-5F5E050AA2CF} = {AA1E0BFB-01E1-4354-9C5F-5F5E050AA2CF}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +20,10 @@ Global
 		{AA1E0BFB-01E1-4354-9C5F-5F5E050AA2CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AA1E0BFB-01E1-4354-9C5F-5F5E050AA2CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AA1E0BFB-01E1-4354-9C5F-5F5E050AA2CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1A2D0D6-5940-42BB-8D5F-D0C73393CF64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1A2D0D6-5940-42BB-8D5F-D0C73393CF64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1A2D0D6-5940-42BB-8D5F-D0C73393CF64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1A2D0D6-5940-42BB-8D5F-D0C73393CF64}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -10,7 +10,9 @@
     public interface IFlightService
     {
         [OperationContract]
-        List<Flight> FindFlight();
+        List<Flight> FindFlight(string toCity);
+        [OperationContract]
+        List<Flight> GetAllFlights();
         //[OperationContract]
         //List<Flight> ();
 

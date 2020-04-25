@@ -1,4 +1,5 @@
-﻿using AirlinesReservation.Models;
+﻿using AirlinesReservation.DB;
+using AirlinesReservation.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,10 +13,14 @@ namespace AirlinesReservation.Services
     // NOTE: In order to launch WCF Test Client for testing this service, please select FlightService.svc or FlightService.svc.cs at the Solution Explorer and start debugging.
     public class FlightService : IFlightService
     {
-        public void DoWork()
+        public List<Flight> GetAllFlights()
         {
-        }
+            return InitialDB.Flights;
 
-        public List<Flight> FindFlight() => throw new NotImplementedException();
+        }
+        public List<Flight> FindFlight(string toCity)
+        {
+            return InitialDB.Flights.Where(f => f.ToCity.Equals(toCity)).ToList();
+        }
     }
 }

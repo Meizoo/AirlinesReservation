@@ -12,7 +12,7 @@ namespace AirlinesReservation.DB
         public static List<Reservation> Reservations { get; set; }
         public static List<User> Users { get; set; }
         public static List<Ticket> Tickets { get; set; }
-        public static void Init()
+        static InitialDB()
         {
             var list = Enumerable.Range(1, 10);
             Flights = new List<Flight>(list.Select<int, Flight>(i => new Flight
@@ -53,6 +53,7 @@ namespace AirlinesReservation.DB
                 Ticket = Tickets[i - 1],
                 User = Users[i - 1],
             }));
+            Users.Select(u => u.Reservation = Reservations.Where(r => r.Id == u.Id).ToList());
             // Dodać rezerwację do usersów.
         }
     }

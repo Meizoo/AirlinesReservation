@@ -1,4 +1,5 @@
-﻿using AirlinesReservation.Models;
+﻿using AirlinesReservation.DB;
+using AirlinesReservation.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,12 +13,34 @@ namespace AirlinesReservation.Services
     // NOTE: In order to launch WCF Test Client for testing this service, please select ReservationService.svc or ReservationService.svc.cs at the Solution Explorer and start debugging.
     public class ReservationService : IReservationService
     {
-        public void AddReservation(Flight flight, User user) => throw new NotImplementedException();
-        public bool CheckReservation(Guid number) => throw new NotImplementedException();
-        public byte[] ConfirmReservation(User user) => throw new NotImplementedException();
-
-        public void DoWork()
+        public void AddReservation(Flight flight, User user)
         {
+            var reservation = new Reservation
+            {
+                Id = InitialDB.Reservations.Count + 1,
+                Number = Guid.NewGuid(),
+                CreationTime = DateTime.Now,
+                DurationTime = 30,
+                Flight = flight,
+                User = user
+            };
+            InitialDB.Reservations.Add(reservation);
+            InitialDB.Users.Select(u => u = user).Where(u => u.Username == user.Username);
+        }
+
+        public bool CheckReservation(Guid number, string username)
+        {
+            return InitialDB.Users.FirstOrDefault(u => u.Username == username).Reservation.Exists(r => r.Number == number);
+        }
+        
+        public List<Reservation> ShowAllReservation(string username)
+        {
+            return InitialDB.Users.FirstOrDefault(u => u.Username == username).Reservation;
+        }
+
+        public byte[] GetConfirmation(User user)
+        {
+            throw new NotImplementedException();
         }
     }
 }

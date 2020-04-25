@@ -15,7 +15,6 @@ namespace AirlinesReservation
     {
         public string GetData(int value)
         {
-            InitialDB.Init();
             return string.Format("You entered: {0}", value);
         }
 
