@@ -1,10 +1,17 @@
-﻿namespace AirlinesReservation.Models
+﻿using System.Runtime.Serialization;
+
+namespace AirlinesReservation.Models
 {
+    [DataContract]
     public enum ReservationType
     {
+        [EnumMember]
         Active,
-        Pending, 
+        [EnumMember]
+        Pending,
+        [EnumMember]
         Inactive,
+        [EnumMember]
         Done,
     }
 }

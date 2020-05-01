@@ -1,46 +1,90 @@
-﻿using AirlinesReservation.DB;
-using AirlinesReservation.Models;
+﻿using System.Linq;
 using System;
+
+using AirlinesReservation.DB;
+using AirlinesReservation.Models;
+using iText.Kernel.Pdf;
+using iText.Layout;
+using iText.Layout.Element;
+using iText.Layout.Properties;
 using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Serialization;
 using System.ServiceModel;
-using System.Text;
 
 namespace AirlinesReservation.Services
 {
-    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "ReservationService" in code, svc and config file together.
-    // NOTE: In order to launch WCF Test Client for testing this service, please select ReservationService.svc or ReservationService.svc.cs at the Solution Explorer and start debugging.
+    [ServiceBehavior(IncludeExceptionDetailInFaults = true)]
     public class ReservationService : IReservationService
     {
+        DataContext context = new DataContext();
         public void AddReservation(Flight flight, User user)
         {
             var reservation = new Reservation
             {
-                Id = InitialDB.Reservations.Count + 1,
                 Number = Guid.NewGuid(),
                 CreationTime = DateTime.Now,
                 DurationTime = 30,
-                Flight = flight,
-                User = user
+                //Flight = flight,
+                //User = user,
+                //Ticket = new Ticket() { IsBought = false, Type = TicketType.BusinessClass }
             };
-            InitialDB.Reservations.Add(reservation);
-            InitialDB.Users.Select(u => u = user).Where(u => u.Username == user.Username);
+            using (var context = new DataContext())
+            {
+                context.Reservations.Add(reservation);
+                context.SaveChanges();
+            }
         }
 
-        public bool CheckReservation(Guid number, string username)
+        public Reservation CheckReservation(Guid number, string username)
         {
-            return InitialDB.Users.FirstOrDefault(u => u.Username == username).Reservation.Exists(r => r.Number == number);
+            try
+            {
+                var res = context.Reservations.FirstOrDefault(r => r.Number == number);
+                return res;
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            
         }
-        
+
         public List<Reservation> ShowAllReservation(string username)
         {
-            return InitialDB.Users.FirstOrDefault(u => u.Username == username).Reservation;
+            try
+            {
+                
+                    var user = context.Reservations.ToList();
+                    return user;
+                
+
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
         }
 
-        public byte[] GetConfirmation(User user)
+        public byte[] GetConfirmation(Guid number)
         {
-            throw new NotImplementedException();
+            using (var context = new DataContext())
+            {
+                var res = context.Reservations.FirstOrDefault(r => r.Number == number);
+                PdfDocument pdfDoc = new PdfDocument(new PdfWriter("./simple.pdf"));
+                Document doc = new Document(pdfDoc);
+                Table table = new Table(UnitValue.CreatePercentArray(8)).UseAllAvailableWidth();
+
+                //table.AddCell($"From city: {res.Flight.FromCity}");
+                //table.AddCell($"To city: {res.Flight.ToCity}");
+
+
+                doc.Add(table);
+
+                doc.Close();
+                throw new NotImplementedException();
+            }
         }
     }
 }

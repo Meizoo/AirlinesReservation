@@ -16,10 +16,10 @@ namespace AirlinesReservation.Services
         [OperationContract]
         void AddReservation(Flight flight, User user);
         [OperationContract]
-        bool CheckReservation(Guid number, string username);
+        Reservation CheckReservation(Guid number, string username);
         [OperationContract]
         List<Reservation> ShowAllReservation(string username);
         [OperationContract]
-        byte[] GetConfirmation(User user);
+        byte[] GetConfirmation(Guid user);
     }
 }

@@ -13,14 +13,22 @@ namespace AirlinesReservation.Services
     // NOTE: In order to launch WCF Test Client for testing this service, please select FlightService.svc or FlightService.svc.cs at the Solution Explorer and start debugging.
     public class FlightService : IFlightService
     {
+        DataContext context = new DataContext();
         public List<Flight> GetAllFlights()
         {
-            return InitialDB.Flights;
+            try
+            {
 
+            return context.Flights.ToList();
+            }
+            catch(Exception ex)
+            {
+                throw new Exception();
+            }
         }
         public List<Flight> FindFlight(string toCity)
         {
-            return InitialDB.Flights.Where(f => f.ToCity.Equals(toCity)).ToList();
+            return context.Flights.Where(f => f.ToCity.Equals(toCity)).ToList();
         }
     }
 }
