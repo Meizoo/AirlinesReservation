@@ -21,8 +21,20 @@ namespace AirlinesClient
             var client = new FlightService.FlightServiceClient();
             client.Open();
             var f = client.GetAllFlights()[0];
-            label1.Text = f.FromCity;
             client.Close();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            var client = new FlightService.FlightServiceClient();
+            ListView.Items.Clear();
+            foreach (var item in client.GetAllFlights())
+            {
+
+                var itemList = new ListViewItem(new string[] { item.ToCity, item.FromCity, item.Cost.ToString(), item.Date.ToString() });
+                itemList.Tag = item;
+                ListView.Items.Add(itemList);
+            }
         }
     }
 }

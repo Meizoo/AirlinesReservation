@@ -23,9 +23,9 @@ namespace AirlinesReservation.Services
                 Number = Guid.NewGuid(),
                 CreationTime = DateTime.Now,
                 DurationTime = 30,
-                //Flight = flight,
-                //User = user,
-                //Ticket = new Ticket() { IsBought = false, Type = TicketType.BusinessClass }
+                Flight = flight,
+                User = user,
+                Ticket = new Ticket() { IsBought = false, Type = TicketType.BusinessClass }
             };
             using (var context = new DataContext())
             {
@@ -33,38 +33,18 @@ namespace AirlinesReservation.Services
                 context.SaveChanges();
             }
         }
-
         public Reservation CheckReservation(Guid number, string username)
         {
-            try
-            {
-                var res = context.Reservations.FirstOrDefault(r => r.Number == number);
-                return res;
-
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-            
+            var user = this.context.Users.FirstOrDefault(r => r.Username == username);
+            var res = context.Reservations.FirstOrDefault(r => r.Number == number && r.UserId == user.Id);
+            return res;
         }
 
         public List<Reservation> ShowAllReservation(string username)
         {
-            try
-            {
-                
-                    var user = context.Reservations.ToList();
-                    return user;
-                
-
-            }
-            catch (Exception ex)
-            {
-
-                throw;
-            }
+            var user = this.context.Users.FirstOrDefault(r => r.Username == username);
+            var resrv = this.context.Reservations.Where(r => r.UserId == user.Id).ToList();
+            return resrv;
         }
 
         public byte[] GetConfirmation(Guid number)
@@ -76,8 +56,8 @@ namespace AirlinesReservation.Services
                 Document doc = new Document(pdfDoc);
                 Table table = new Table(UnitValue.CreatePercentArray(8)).UseAllAvailableWidth();
 
-                //table.AddCell($"From city: {res.Flight.FromCity}");
-                //table.AddCell($"To city: {res.Flight.ToCity}");
+                table.AddCell($"From city: {res.Flight.FromCity}");
+                table.AddCell($"To city: {res.Flight.ToCity}");
 
 
                 doc.Add(table);

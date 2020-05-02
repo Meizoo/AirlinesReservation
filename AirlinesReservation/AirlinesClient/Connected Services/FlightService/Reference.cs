@@ -32,9 +32,6 @@ namespace AirlinesClient.FlightService {
         private string FromCityField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int SitsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -88,19 +85,6 @@ namespace AirlinesClient.FlightService {
                 if ((object.ReferenceEquals(this.FromCityField, value) != true)) {
                     this.FromCityField = value;
                     this.RaisePropertyChanged("FromCity");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
                 }
             }
         }

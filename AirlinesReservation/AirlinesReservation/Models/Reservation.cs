@@ -26,8 +26,11 @@
         [DataMember]
         public ReservationType ReservationType { get; set; }
 
+        [DataMember]
         public int UserId { get; set; }
+        [DataMember]
         public int FlightId { get; set; }
+        [DataMember]
         public int TicketId { get; set; }
 
         [DataMember]
