@@ -81,8 +81,17 @@ namespace AirlinesClient
         {
             if (selectedItem != null && buyTicket.Visible == true)
             {
-
+                // zrobic kupno
             }
+        }
+
+        private void checkReserv_Click(object sender, EventArgs e)
+        {
+            var client = new ReservationService.ReservationServiceClient();
+            client.Open();
+            var reserv = client.CheckReservation(Guid.Parse(reservNumber.Text), "Test1");
+            MessageBox.Show($"Znaleziono rezerwacje o id: {reserv.Number}, Na lot do: {reserv.Flight.ToCity}, Typ rezerwacji: {reserv.ReservationType.ToString()}");
+            client.Close();
         }
     }
 }

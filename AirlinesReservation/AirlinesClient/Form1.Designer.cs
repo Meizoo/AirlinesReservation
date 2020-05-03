@@ -39,8 +39,8 @@
             this.buyTicket = new System.Windows.Forms.Button();
             this.searchText = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.reservNumber = new System.Windows.Forms.TextBox();
+            this.checkReserv = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -139,21 +139,22 @@
             this.label2.TabIndex = 8;
             this.label2.Text = "Wyszukaj";
             // 
-            // textBox2
+            // reservNumber
             // 
-            this.textBox2.Location = new System.Drawing.Point(618, 169);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(141, 20);
-            this.textBox2.TabIndex = 9;
+            this.reservNumber.Location = new System.Drawing.Point(618, 169);
+            this.reservNumber.Name = "reservNumber";
+            this.reservNumber.Size = new System.Drawing.Size(141, 20);
+            this.reservNumber.TabIndex = 9;
             // 
-            // button2
+            // checkReserv
             // 
-            this.button2.Location = new System.Drawing.Point(618, 195);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(141, 26);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "Sprawdź rezerwację";
-            this.button2.UseVisualStyleBackColor = true;
+            this.checkReserv.Location = new System.Drawing.Point(618, 195);
+            this.checkReserv.Name = "checkReserv";
+            this.checkReserv.Size = new System.Drawing.Size(141, 26);
+            this.checkReserv.TabIndex = 10;
+            this.checkReserv.Text = "Sprawdź rezerwację";
+            this.checkReserv.UseVisualStyleBackColor = true;
+            this.checkReserv.Click += new System.EventHandler(this.checkReserv_Click);
             // 
             // label3
             // 
@@ -170,8 +171,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(841, 479);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.checkReserv);
+            this.Controls.Add(this.reservNumber);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.searchText);
             this.Controls.Add(this.buyTicket);
@@ -200,8 +201,8 @@
         private System.Windows.Forms.Button buyTicket;
         private System.Windows.Forms.TextBox searchText;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox reservNumber;
+        private System.Windows.Forms.Button checkReserv;
         private System.Windows.Forms.Label label3;
     }
 }

@@ -9,6 +9,7 @@ using iText.Layout.Element;
 using iText.Layout.Properties;
 using System.Collections.Generic;
 using System.ServiceModel;
+using iText.StyledXmlParser.Resolver.Resource;
 
 namespace AirlinesReservation.Services
 {
@@ -37,6 +38,7 @@ namespace AirlinesReservation.Services
         {
             var user = this.context.Users.FirstOrDefault(r => r.Username == username);
             var res = context.Reservations.FirstOrDefault(r => r.Number == number && r.UserId == user.Id);
+            res.Flight = context.Flights.FirstOrDefault(f => f.Id == res.FlightId);
             return res;
         }
 
