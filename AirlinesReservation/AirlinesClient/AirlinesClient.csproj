@@ -128,9 +128,6 @@
     <WCFMetadataStorage Include="Connected Services\ReservationService\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\FlightService\FlightService.disco" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Connected Services\FlightService\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>

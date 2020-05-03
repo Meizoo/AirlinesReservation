@@ -37,10 +37,11 @@
             this.chDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
             this.buyTicket = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.searchText = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -121,14 +122,13 @@
             this.buyTicket.Visible = false;
             this.buyTicket.Click += new System.EventHandler(this.buyTicket_Click);
             // 
-            // textBox1
+            // searchText
             // 
-            this.textBox1.Location = new System.Drawing.Point(416, 16);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 7;
-            this.textBox1.Visible = false;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.searchText.Location = new System.Drawing.Point(416, 16);
+            this.searchText.Name = "searchText";
+            this.searchText.Size = new System.Drawing.Size(100, 20);
+            this.searchText.TabIndex = 7;
+            this.searchText.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label2
             // 
@@ -155,15 +155,25 @@
             this.button2.Text = "Sprawdź rezerwację";
             this.button2.UseVisualStyleBackColor = true;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(619, 153);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(140, 13);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "Wprowadź numer rezerwacji";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(841, 479);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.searchText);
             this.Controls.Add(this.buyTicket);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ListView);
@@ -188,10 +198,11 @@
         private System.Windows.Forms.ColumnHeader chCost;
         private System.Windows.Forms.ColumnHeader chDate;
         private System.Windows.Forms.Button buyTicket;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox searchText;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label3;
     }
 }
 

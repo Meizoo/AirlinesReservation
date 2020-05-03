@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="6a09e749-cf42-40d0-9561-02acfe7222c8" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="42f140cd-d1da-4e6a-9b39-d1afc56eb98c" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -19,14 +19,13 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:63764/Services/FlightService.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:8080/Services/FlightService.svc?wsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="FlightService.xsd" MetadataType="Schema" ID="98d01e49-acc0-4e70-8ff1-a40384333584" SourceId="1" SourceUrl="http://localhost:63764/Services/FlightService.svc?xsd=xsd2" />
-    <MetadataFile FileName="FlightService1.xsd" MetadataType="Schema" ID="d4c84138-25fe-4ea7-8fd2-d751ca49e19b" SourceId="1" SourceUrl="http://localhost:63764/Services/FlightService.svc?xsd=xsd1" />
-    <MetadataFile FileName="FlightService2.xsd" MetadataType="Schema" ID="d4bab3bc-d3ee-4761-a3d3-4938dfd0203d" SourceId="1" SourceUrl="http://localhost:63764/Services/FlightService.svc?xsd=xsd0" />
-    <MetadataFile FileName="FlightService.disco" MetadataType="Disco" ID="c76e2092-1fef-47c1-b248-cb7be7a624a5" SourceId="1" SourceUrl="http://localhost:63764/Services/FlightService.svc?disco" />
-    <MetadataFile FileName="FlightService.wsdl" MetadataType="Wsdl" ID="1bbbc1b5-730b-4464-86da-810378bcf5a2" SourceId="1" SourceUrl="http://localhost:63764/Services/FlightService.svc?wsdl" />
+    <MetadataFile FileName="FlightService.xsd" MetadataType="Schema" ID="bbc91447-a108-401c-b1d5-8bb806616b28" SourceId="1" SourceUrl="http://localhost:8080/Services/FlightService.svc?xsd=xsd0" />
+    <MetadataFile FileName="FlightService.wsdl" MetadataType="Wsdl" ID="1933552a-873d-438c-8376-99f611533137" SourceId="1" SourceUrl="http://localhost:8080/Services/FlightService.svc?wsdl" />
+    <MetadataFile FileName="FlightService1.xsd" MetadataType="Schema" ID="76e4116e-0ac6-4509-9a2b-60d4683ad308" SourceId="1" SourceUrl="http://localhost:8080/Services/FlightService.svc?xsd=xsd2" />
+    <MetadataFile FileName="FlightService2.xsd" MetadataType="Schema" ID="a10abbd6-524a-482a-a09b-c33786c4f408" SourceId="1" SourceUrl="http://localhost:8080/Services/FlightService.svc?xsd=xsd1" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

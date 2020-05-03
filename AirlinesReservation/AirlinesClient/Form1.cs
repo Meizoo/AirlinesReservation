@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -24,12 +25,13 @@ namespace AirlinesClient
             var f = client.GetAllFlights()[0];
             client.Close();
         }
-
+        Flight[] flights = null;
         private void Form1_Load(object sender, EventArgs e)
         {
             var client = new FlightService.FlightServiceClient();
             ListView.Items.Clear();
-            foreach (var item in client.GetAllFlights())
+            flights = client.GetAllFlights();
+            foreach (var item in flights)
             {
 
                 var itemList = new ListViewItem(new string[] { item.ToCity, item.FromCity, item.Cost.ToString(), item.Date.ToString() });
@@ -65,9 +67,14 @@ namespace AirlinesClient
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            // zrobic wyszukiwanie
-            var client = new FlightService.FlightServiceClient();
-            
+            ListView.Items.Clear();
+            var filterFlights = flights.Where(f => f.ToCity.Contains(searchText.Text));
+            foreach (var item in filterFlights)
+            {
+                var itemList = new ListViewItem(new string[] { item.ToCity, item.FromCity, item.Cost.ToString(), item.Date.ToString() });
+                itemList.Tag = item;
+                ListView.Items.Add(itemList);
+            }
         }
 
         private void buyTicket_Click(object sender, EventArgs e)
