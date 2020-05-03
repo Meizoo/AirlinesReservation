@@ -26,9 +26,15 @@ namespace AirlinesReservation.Services
                 throw new Exception();
             }
         }
+        
         public List<Flight> FindFlight(string toCity)
         {
             return this.context.Flights.Where(f => f.ToCity.Equals(toCity)).ToList();
+        }
+
+        public User Login(string username)
+        {
+            return context.Users.FirstOrDefault(u => u.Username == username);
         }
     }
 }

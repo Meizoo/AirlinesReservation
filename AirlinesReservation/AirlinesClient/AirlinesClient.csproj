@@ -81,6 +81,9 @@
     <None Include="Connected Services\FlightService\AirlinesClient.FlightService.Flight.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\FlightService\AirlinesClient.FlightService.User.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\FlightService\FlightService.wsdl" />
     <None Include="Connected Services\FlightService\FlightService.xsd">
       <SubType>Designer</SubType>

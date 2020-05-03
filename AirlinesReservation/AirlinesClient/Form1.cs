@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AirlinesClient.FlightService;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -34,6 +35,46 @@ namespace AirlinesClient
                 var itemList = new ListViewItem(new string[] { item.ToCity, item.FromCity, item.Cost.ToString(), item.Date.ToString() });
                 itemList.Tag = item;
                 ListView.Items.Add(itemList);
+            }
+        }
+        private Flight selectedItem = null;
+        private void ListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (ListView.SelectedItems.Count > 0)
+                {
+                    selectedItem = (Flight)ListView.SelectedItems[0].Tag;
+                    buyTicket.Visible = true;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+        User user = null;
+        private void login_Click(object sender, EventArgs e)
+        {
+            var client = new FlightService.FlightServiceClient();
+            client.Open();
+            user = client.Login("Test1");
+            client.Close();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            // zrobic wyszukiwanie
+            var client = new FlightService.FlightServiceClient();
+            
+        }
+
+        private void buyTicket_Click(object sender, EventArgs e)
+        {
+            if (selectedItem != null && buyTicket.Visible == true)
+            {
+
             }
         }
     }

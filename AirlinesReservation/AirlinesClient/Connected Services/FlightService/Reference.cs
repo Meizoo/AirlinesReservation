@@ -138,6 +138,142 @@ namespace AirlinesClient.FlightService {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="User", Namespace="http://schemas.datacontract.org/2004/07/AirlinesReservation.Models")]
+    [System.SerializableAttribute()]
+    public partial class User : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime BirthField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime CreationTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private AirlinesClient.FlightService.Sex GenderField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SurnameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string UsernameField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime Birth {
+            get {
+                return this.BirthField;
+            }
+            set {
+                if ((this.BirthField.Equals(value) != true)) {
+                    this.BirthField = value;
+                    this.RaisePropertyChanged("Birth");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime CreationTime {
+            get {
+                return this.CreationTimeField;
+            }
+            set {
+                if ((this.CreationTimeField.Equals(value) != true)) {
+                    this.CreationTimeField = value;
+                    this.RaisePropertyChanged("CreationTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public AirlinesClient.FlightService.Sex Gender {
+            get {
+                return this.GenderField;
+            }
+            set {
+                if ((this.GenderField.Equals(value) != true)) {
+                    this.GenderField = value;
+                    this.RaisePropertyChanged("Gender");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Surname {
+            get {
+                return this.SurnameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SurnameField, value) != true)) {
+                    this.SurnameField = value;
+                    this.RaisePropertyChanged("Surname");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Username {
+            get {
+                return this.UsernameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UsernameField, value) != true)) {
+                    this.UsernameField = value;
+                    this.RaisePropertyChanged("Username");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Sex", Namespace="http://schemas.datacontract.org/2004/07/AirlinesReservation.Models")]
+    public enum Sex : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Male = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Female = 1,
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="FlightService.IFlightService")]
     public interface IFlightService {
@@ -153,6 +289,12 @@ namespace AirlinesClient.FlightService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFlightService/GetAllFlights", ReplyAction="http://tempuri.org/IFlightService/GetAllFlightsResponse")]
         System.Threading.Tasks.Task<AirlinesClient.FlightService.Flight[]> GetAllFlightsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFlightService/Login", ReplyAction="http://tempuri.org/IFlightService/LoginResponse")]
+        AirlinesClient.FlightService.User Login(string username);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFlightService/Login", ReplyAction="http://tempuri.org/IFlightService/LoginResponse")]
+        System.Threading.Tasks.Task<AirlinesClient.FlightService.User> LoginAsync(string username);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -196,6 +338,14 @@ namespace AirlinesClient.FlightService {
         
         public System.Threading.Tasks.Task<AirlinesClient.FlightService.Flight[]> GetAllFlightsAsync() {
             return base.Channel.GetAllFlightsAsync();
+        }
+        
+        public AirlinesClient.FlightService.User Login(string username) {
+            return base.Channel.Login(username);
+        }
+        
+        public System.Threading.Tasks.Task<AirlinesClient.FlightService.User> LoginAsync(string username) {
+            return base.Channel.LoginAsync(username);
         }
     }
 }
