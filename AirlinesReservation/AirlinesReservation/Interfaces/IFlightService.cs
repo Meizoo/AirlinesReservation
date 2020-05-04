@@ -1,22 +1,23 @@
-﻿namespace AirlinesReservation.Services
+﻿using System.Collections.Generic;
+using System.ServiceModel;
+
+using AirlinesReservation.Models;
+
+namespace AirlinesReservation.Services
 {
-    using System.Collections.Generic;
-    using System.ServiceModel;
+	[ServiceContract]
+	public interface IFlightService
+	{
+		[OperationContract]
+		List<Flight> FindFlight(string toCity);
 
-    using AirlinesReservation.Models;
+		[OperationContract]
+		List<Flight> GetAllFlights();
 
-    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the interface name "IFlightService" in both code and config file together.
-    [ServiceContract]
-    public interface IFlightService
-    {
-        [OperationContract]
-        List<Flight> FindFlight(string toCity);
-        [OperationContract]
-        List<Flight> GetAllFlights();
-        [OperationContract]
-        User Login(string username);
-        //[OperationContract]
-        //List<Flight> ();
+		[OperationContract]
+		User Login(string username);
 
-    }
+		//[OperationContract]
+		//List<Flight> ();
+	}
 }

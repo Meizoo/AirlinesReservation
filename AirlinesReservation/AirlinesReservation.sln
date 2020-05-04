@@ -10,6 +10,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirlinesClient", "AirlinesC
 		{AA1E0BFB-01E1-4354-9C5F-5F5E050AA2CF} = {AA1E0BFB-01E1-4354-9C5F-5F5E050AA2CF}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PdfGen", "PdfGen\PdfGen.csproj", "{69B9259C-B7C0-47DE-B7A9-EE67CEBF2D5A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,6 +26,10 @@ Global
 		{C1A2D0D6-5940-42BB-8D5F-D0C73393CF64}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C1A2D0D6-5940-42BB-8D5F-D0C73393CF64}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C1A2D0D6-5940-42BB-8D5F-D0C73393CF64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69B9259C-B7C0-47DE-B7A9-EE67CEBF2D5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69B9259C-B7C0-47DE-B7A9-EE67CEBF2D5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69B9259C-B7C0-47DE-B7A9-EE67CEBF2D5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69B9259C-B7C0-47DE-B7A9-EE67CEBF2D5A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
