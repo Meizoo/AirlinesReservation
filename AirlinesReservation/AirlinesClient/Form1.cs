@@ -5,6 +5,7 @@ using System.Linq;
 using System.Windows.Forms;
 
 using AirlinesClient.FlightService;
+using AirlinesReservation.Services;
 
 namespace AirlinesClient
 {
@@ -80,7 +81,15 @@ namespace AirlinesClient
         {
             if (this.selectedItem != null && this.buyTicket.Visible == true)
             {
-                // zrobic kupno
+                var client = new TicketService.TicketService();
+
+                if (this.ListView.SelectedItems.Count > 0)
+                {
+                    this.selectedItem = (Flight)this.ListView.SelectedItems[0].Tag;
+                    this.buyTicket.Visible = true;
+                    client.BuyTicket(this.user, this.selectedItem, TicketType.BusinessClass);
+                }
+
             }
         }
 

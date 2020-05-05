@@ -1,11 +1,9 @@
-﻿using AirlinesReservation.DB;
-using AirlinesReservation.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.Serialization;
-using System.ServiceModel;
-using System.Text;
+
+using AirlinesReservation.DB;
+using AirlinesReservation.Models;
 
 namespace AirlinesReservation.Services
 {
@@ -18,13 +16,12 @@ namespace AirlinesReservation.Services
         {
             try
             {
-
-            return this.context.Flights.ToList();
+                return this.context.Flights.ToList();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                throw new Exception();
-            }
+                throw ex;
+            }   
         }
         
         public List<Flight> FindFlight(string toCity)

@@ -113,6 +113,7 @@
     <Content Include="Service1.svc" />
     <Content Include="Services\FlightService.svc" />
     <Content Include="Services\ReservationService.svc" />
+    <Content Include="Services\TicketService.svc" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -139,8 +140,12 @@
       <DependentUpon>FlightService.svc</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\IFlightService.cs" />
+    <Compile Include="Interfaces\ITicketService.cs" />
     <Compile Include="Services\ReservationService.svc.cs">
       <DependentUpon>ReservationService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Services\TicketService.svc.cs">
+      <DependentUpon>TicketService.svc</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

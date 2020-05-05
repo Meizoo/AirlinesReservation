@@ -1,15 +1,15 @@
-﻿using System.Linq;
-using System;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.ServiceModel;
 
 using AirlinesReservation.DB;
 using AirlinesReservation.Models;
+
 using iText.Kernel.Pdf;
 using iText.Layout;
 using iText.Layout.Element;
 using iText.Layout.Properties;
-using System.Collections.Generic;
-using System.ServiceModel;
-using iText.StyledXmlParser.Resolver.Resource;
 
 namespace AirlinesReservation.Services
 {
@@ -28,6 +28,7 @@ namespace AirlinesReservation.Services
                 User = user,
                 Ticket = new Ticket() { IsBought = false, Type = TicketType.BusinessClass }
             };
+
             using (var context = new DataContext())
             {
                 context.Reservations.Add(reservation);
@@ -37,8 +38,8 @@ namespace AirlinesReservation.Services
         public Reservation CheckReservation(Guid number, string username)
         {
             var user = this.context.Users.FirstOrDefault(r => r.Username == username);
-            var res = context.Reservations.FirstOrDefault(r => r.Number == number && r.UserId == user.Id);
-            res.Flight = context.Flights.FirstOrDefault(f => f.Id == res.FlightId);
+            var res = this.context.Reservations.FirstOrDefault(r => r.Number == number && r.UserId == user.Id);
+            res.Flight = this.context.Flights.FirstOrDefault(f => f.Id == res.FlightId);
             return res;
         }
 
