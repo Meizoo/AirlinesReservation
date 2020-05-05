@@ -57,7 +57,9 @@ namespace PdfGen
 			foreach (var i in cells)
 				table.AddCell(i);
 
-			doc.Add(table);
+			this.doc.Add(table);
+
+			return this;
 		}
 
 		public PdfBuilder AddList(
