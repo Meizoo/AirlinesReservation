@@ -25,6 +25,12 @@
   <wsdl:message name="IFlightService_Login_OutputMessage">
     <wsdl:part name="parameters" element="tns:LoginResponse" />
   </wsdl:message>
+  <wsdl:message name="IFlightService_BuyTicket_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuyTicket" />
+  </wsdl:message>
+  <wsdl:message name="IFlightService_BuyTicket_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuyTicketResponse" />
+  </wsdl:message>
   <wsdl:portType name="IFlightService">
     <wsdl:operation name="FindFlight">
       <wsdl:input wsaw:Action="http://tempuri.org/IFlightService/FindFlight" message="tns:IFlightService_FindFlight_InputMessage" />
@@ -37,6 +43,10 @@
     <wsdl:operation name="Login">
       <wsdl:input wsaw:Action="http://tempuri.org/IFlightService/Login" message="tns:IFlightService_Login_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IFlightService/LoginResponse" message="tns:IFlightService_Login_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuyTicket">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFlightService/BuyTicket" message="tns:IFlightService_BuyTicket_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFlightService/BuyTicketResponse" message="tns:IFlightService_BuyTicket_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IFlightService" type="tns:IFlightService">
@@ -61,6 +71,15 @@
     </wsdl:operation>
     <wsdl:operation name="Login">
       <soap:operation soapAction="http://tempuri.org/IFlightService/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuyTicket">
+      <soap:operation soapAction="http://tempuri.org/IFlightService/BuyTicket" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -1,14 +1,16 @@
-﻿using System;
-using System.Linq;
-
-using iText.IO.Font.Constants;
+﻿using iText.IO.Font.Constants;
 using iText.Kernel.Font;
 using iText.Kernel.Pdf;
 using iText.Layout;
 using iText.Layout.Element;
 using iText.Layout.Properties;
+using iText.StyledXmlParser.Jsoup.Nodes;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
 
-namespace PdfGen
+namespace AirlinesReservation
 {
 	public sealed class PdfBuilder : IDisposable
 	{
@@ -17,16 +19,16 @@ namespace PdfGen
 				DocumentType documentType = DocumentType.Blank
 			)
 		{
-			PdfFont font = PdfFontFactory.CreateFont(StandardFonts.TIMES_ROMAN);
+			//PdfFont font = PdfFontFactory.CreateFont(StandardFonts.TIMES_ROMAN);
 			this.style = new Style();
-			this.style.SetFont(font);
+			//this.style.SetFont(font);
 
 			this.writer = new PdfWriter(filename);
 
 			this.pdf = new PdfDocument(this.writer);
 			this.pdf.AddNewPage();
 
-			this.doc = new Document(this.pdf);
+			this.doc = new iText.Layout.Document(this.pdf);
 
 			this.documentType = documentType;
 		}
@@ -57,7 +59,7 @@ namespace PdfGen
 			foreach (var i in cells)
 				table.AddCell(i);
 
-			doc.Add(table);
+			this.doc.Add(table);
 			return this;
 		}
 
@@ -88,7 +90,7 @@ namespace PdfGen
 		private PdfBuilder Add<T>(BlockElement<T> element)
 			where T : IElement
 		{
-			this.doc.Add(element.AddStyle(this.style) as IBlockElement);
+			this.doc.Add(element as IBlockElement);
 			return this;
 		}
 
@@ -96,7 +98,7 @@ namespace PdfGen
 
 		private PdfWriter writer;
 
-		private readonly Document doc;
+		private readonly iText.Layout.Document doc;
 		private readonly Style style;
 		private readonly PdfDocument pdf;
 		private readonly DocumentType documentType;

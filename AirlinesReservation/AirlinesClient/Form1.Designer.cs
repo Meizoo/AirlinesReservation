@@ -42,11 +42,13 @@
             this.reservNumber = new System.Windows.Forms.TextBox();
             this.checkReserv = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(618, 42);
+            this.button1.Location = new System.Drawing.Point(628, 56);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(141, 26);
@@ -57,7 +59,7 @@
             // 
             // login
             // 
-            this.login.Location = new System.Drawing.Point(618, 73);
+            this.login.Location = new System.Drawing.Point(628, 87);
             this.login.Name = "login";
             this.login.Size = new System.Drawing.Size(141, 26);
             this.login.TabIndex = 3;
@@ -113,7 +115,7 @@
             // 
             // buyTicket
             // 
-            this.buyTicket.Location = new System.Drawing.Point(618, 105);
+            this.buyTicket.Location = new System.Drawing.Point(628, 119);
             this.buyTicket.Name = "buyTicket";
             this.buyTicket.Size = new System.Drawing.Size(141, 26);
             this.buyTicket.TabIndex = 6;
@@ -141,14 +143,14 @@
             // 
             // reservNumber
             // 
-            this.reservNumber.Location = new System.Drawing.Point(618, 169);
+            this.reservNumber.Location = new System.Drawing.Point(628, 183);
             this.reservNumber.Name = "reservNumber";
             this.reservNumber.Size = new System.Drawing.Size(141, 20);
             this.reservNumber.TabIndex = 9;
             // 
             // checkReserv
             // 
-            this.checkReserv.Location = new System.Drawing.Point(618, 195);
+            this.checkReserv.Location = new System.Drawing.Point(628, 209);
             this.checkReserv.Name = "checkReserv";
             this.checkReserv.Size = new System.Drawing.Size(141, 26);
             this.checkReserv.TabIndex = 10;
@@ -159,17 +161,35 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(619, 153);
+            this.label3.Location = new System.Drawing.Point(629, 167);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(140, 13);
             this.label3.TabIndex = 11;
             this.label3.Text = "Wprowadź numer rezerwacji";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(639, 17);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(118, 13);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "Wprowadź numer biletu";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(628, 33);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(141, 20);
+            this.textBox1.TabIndex = 12;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(841, 479);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.checkReserv);
             this.Controls.Add(this.reservNumber);
@@ -204,6 +224,8 @@
         private System.Windows.Forms.TextBox reservNumber;
         private System.Windows.Forms.Button checkReserv;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 

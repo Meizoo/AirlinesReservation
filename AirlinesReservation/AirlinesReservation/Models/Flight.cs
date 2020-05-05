@@ -43,5 +43,6 @@ namespace AirlinesReservation.Models
 
         [DataMember]
         public string ToCity { get; set; }
+
     }
 }

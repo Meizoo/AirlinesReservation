@@ -5,7 +5,6 @@ using System.Linq;
 using System.Windows.Forms;
 
 using AirlinesClient.FlightService;
-using AirlinesReservation.Services;
 
 namespace AirlinesClient
 {
@@ -15,14 +14,15 @@ namespace AirlinesClient
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var client = new FlightServiceClient();
+            var client = new ReservationService.ReservationServiceClient();
 
             client.Open();
-
-            var f = client.GetAllFlights()[0];
+            if (ticket == null)
+                MessageBox.Show("Nie kupiłeś biletu");
+            var pdf = client.GetConfirmation(ticket.Number);
             if (Debugger.IsAttached)
             {
-                Debug.WriteLine(f);
+                //Debug.WriteLine(f);
                 Debugger.Break();
             }
 
@@ -71,8 +71,7 @@ namespace AirlinesClient
             this.ListView.Items.Clear();
             this.ListView.Items.AddRange(this.flights
                 .Where(i => i.ToCity.Contains(this.searchText.Text))
-                .Select(i => new ListViewItem { Tag = FlightToArray(i) })
-                .ToArray()
+                .Select(i => new ListViewItem(FlightToArray(i)) { Tag = i }).ToArray()
             );
         }
 
@@ -81,15 +80,15 @@ namespace AirlinesClient
         {
             if (this.selectedItem != null && this.buyTicket.Visible == true)
             {
-                var client = new TicketService.TicketService();
+                var client = new FlightService.FlightServiceClient();
 
                 if (this.ListView.SelectedItems.Count > 0)
                 {
                     this.selectedItem = (Flight)this.ListView.SelectedItems[0].Tag;
                     this.buyTicket.Visible = true;
-
-                    if (client.BuyTicket(this.user, this.selectedItem, TicketType.BusinessClass))
-                        MessageBox.Show("Kupiono bilet");
+                    this.ticket = client.BuyTicket(this.user, this.selectedItem, TicketType.BusinessClass);
+                    if (this.ticket != null)
+                        MessageBox.Show("Kupiono bilet o id:" + this.ticket.Number);
                     else
                         MessageBox.Show("Wystąpił problem podczas kupowania biletu");
                 }
@@ -116,7 +115,7 @@ namespace AirlinesClient
         private Flight[] flights;
         private Flight selectedItem;
         private User user;
-
+        private Reservation ticket;
 
         private static string[] FlightToArray(Flight f) => new[]
             {

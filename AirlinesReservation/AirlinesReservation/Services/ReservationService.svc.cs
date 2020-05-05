@@ -10,7 +10,6 @@ using iText.Kernel.Pdf;
 using iText.Layout;
 using iText.Layout.Element;
 using iText.Layout.Properties;
-using PdfGen;
 
 namespace AirlinesReservation.Services
 {
@@ -54,15 +53,12 @@ namespace AirlinesReservation.Services
 		public byte[] GetConfirmation(Guid number)
 		{
 			using (var context = new DataContext())
-			using (var pdf = new PdfBuilder("./simple.pdf"))
+			using (var pdf = new PdfBuilder("C:/Users/Dazit/source/repos/Meizoo/AirlinesReservation/AirlinesReservation/AirlinesReservation/bin/simple.pdf"))
 				try
 				{
 					var res = context.Reservations.FirstOrDefault(r => r.Number == number);
-
-					pdf.AddTable(
-						$"From city: {res.Flight.FromCity}",
-						$"To city: {res.Flight.ToCity}"
-					);
+					var flight = context.Flights.FirstOrDefault(f => f.Id == res.FlightId);
+					pdf.AddList($"To city: {flight.ToCity}, From city {flight.FromCity}, number: {res.Number}", "b\tb");
 
 					return Encoding.UTF8.GetBytes("Success");
 				}

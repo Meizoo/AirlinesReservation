@@ -274,6 +274,319 @@ namespace AirlinesClient.FlightService {
         Female = 1,
     }
     
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="TicketType", Namespace="http://schemas.datacontract.org/2004/07/AirlinesReservation.Models")]
+    public enum TicketType : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        FirstClass = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        BusinessClass = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        RoundTrip = 2,
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Reservation", Namespace="http://schemas.datacontract.org/2004/07/AirlinesReservation.Models")]
+    [System.SerializableAttribute()]
+    public partial class Reservation : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime CreationTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int DurationTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private AirlinesClient.FlightService.Flight FlightField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int FlightIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Guid NumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private AirlinesClient.FlightService.ReservationType ReservationTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private AirlinesClient.FlightService.Ticket TicketField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int TicketIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private AirlinesClient.FlightService.User UserField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int UserIdField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime CreationTime {
+            get {
+                return this.CreationTimeField;
+            }
+            set {
+                if ((this.CreationTimeField.Equals(value) != true)) {
+                    this.CreationTimeField = value;
+                    this.RaisePropertyChanged("CreationTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int DurationTime {
+            get {
+                return this.DurationTimeField;
+            }
+            set {
+                if ((this.DurationTimeField.Equals(value) != true)) {
+                    this.DurationTimeField = value;
+                    this.RaisePropertyChanged("DurationTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public AirlinesClient.FlightService.Flight Flight {
+            get {
+                return this.FlightField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FlightField, value) != true)) {
+                    this.FlightField = value;
+                    this.RaisePropertyChanged("Flight");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int FlightId {
+            get {
+                return this.FlightIdField;
+            }
+            set {
+                if ((this.FlightIdField.Equals(value) != true)) {
+                    this.FlightIdField = value;
+                    this.RaisePropertyChanged("FlightId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Guid Number {
+            get {
+                return this.NumberField;
+            }
+            set {
+                if ((this.NumberField.Equals(value) != true)) {
+                    this.NumberField = value;
+                    this.RaisePropertyChanged("Number");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public AirlinesClient.FlightService.ReservationType ReservationType {
+            get {
+                return this.ReservationTypeField;
+            }
+            set {
+                if ((this.ReservationTypeField.Equals(value) != true)) {
+                    this.ReservationTypeField = value;
+                    this.RaisePropertyChanged("ReservationType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public AirlinesClient.FlightService.Ticket Ticket {
+            get {
+                return this.TicketField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TicketField, value) != true)) {
+                    this.TicketField = value;
+                    this.RaisePropertyChanged("Ticket");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int TicketId {
+            get {
+                return this.TicketIdField;
+            }
+            set {
+                if ((this.TicketIdField.Equals(value) != true)) {
+                    this.TicketIdField = value;
+                    this.RaisePropertyChanged("TicketId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public AirlinesClient.FlightService.User User {
+            get {
+                return this.UserField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UserField, value) != true)) {
+                    this.UserField = value;
+                    this.RaisePropertyChanged("User");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int UserId {
+            get {
+                return this.UserIdField;
+            }
+            set {
+                if ((this.UserIdField.Equals(value) != true)) {
+                    this.UserIdField = value;
+                    this.RaisePropertyChanged("UserId");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Ticket", Namespace="http://schemas.datacontract.org/2004/07/AirlinesReservation.Models")]
+    [System.SerializableAttribute()]
+    public partial class Ticket : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool IsBoughtField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private AirlinesClient.FlightService.TicketType TypeField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool IsBought {
+            get {
+                return this.IsBoughtField;
+            }
+            set {
+                if ((this.IsBoughtField.Equals(value) != true)) {
+                    this.IsBoughtField = value;
+                    this.RaisePropertyChanged("IsBought");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public AirlinesClient.FlightService.TicketType Type {
+            get {
+                return this.TypeField;
+            }
+            set {
+                if ((this.TypeField.Equals(value) != true)) {
+                    this.TypeField = value;
+                    this.RaisePropertyChanged("Type");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ReservationType", Namespace="http://schemas.datacontract.org/2004/07/AirlinesReservation.Models")]
+    public enum ReservationType : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Active = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Pending = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Inactive = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Done = 3,
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="FlightService.IFlightService")]
     public interface IFlightService {
@@ -295,6 +608,12 @@ namespace AirlinesClient.FlightService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFlightService/Login", ReplyAction="http://tempuri.org/IFlightService/LoginResponse")]
         System.Threading.Tasks.Task<AirlinesClient.FlightService.User> LoginAsync(string username);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFlightService/BuyTicket", ReplyAction="http://tempuri.org/IFlightService/BuyTicketResponse")]
+        AirlinesClient.FlightService.Reservation BuyTicket(AirlinesClient.FlightService.User user, AirlinesClient.FlightService.Flight flight, AirlinesClient.FlightService.TicketType type);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFlightService/BuyTicket", ReplyAction="http://tempuri.org/IFlightService/BuyTicketResponse")]
+        System.Threading.Tasks.Task<AirlinesClient.FlightService.Reservation> BuyTicketAsync(AirlinesClient.FlightService.User user, AirlinesClient.FlightService.Flight flight, AirlinesClient.FlightService.TicketType type);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -346,6 +665,14 @@ namespace AirlinesClient.FlightService {
         
         public System.Threading.Tasks.Task<AirlinesClient.FlightService.User> LoginAsync(string username) {
             return base.Channel.LoginAsync(username);
+        }
+        
+        public AirlinesClient.FlightService.Reservation BuyTicket(AirlinesClient.FlightService.User user, AirlinesClient.FlightService.Flight flight, AirlinesClient.FlightService.TicketType type) {
+            return base.Channel.BuyTicket(user, flight, type);
+        }
+        
+        public System.Threading.Tasks.Task<AirlinesClient.FlightService.Reservation> BuyTicketAsync(AirlinesClient.FlightService.User user, AirlinesClient.FlightService.Flight flight, AirlinesClient.FlightService.TicketType type) {
+            return base.Channel.BuyTicketAsync(user, flight, type);
         }
     }
 }

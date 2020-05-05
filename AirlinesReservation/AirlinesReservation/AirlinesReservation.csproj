@@ -113,11 +113,12 @@
     <Content Include="Service1.svc" />
     <Content Include="Services\FlightService.svc" />
     <Content Include="Services\ReservationService.svc" />
-    <Content Include="Services\TicketService.svc" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DB\DataContext.cs" />
+    <Compile Include="DocumentType.cs" />
+    <Compile Include="ListNumberingType.cs" />
     <Compile Include="Migrations\202005012346301_Init.cs" />
     <Compile Include="Migrations\202005012346301_Init.designer.cs">
       <DependentUpon>202005012346301_Init.cs</DependentUpon>
@@ -130,6 +131,7 @@
     <Compile Include="Models\Ticket.cs" />
     <Compile Include="Helpers\Enums\TicketType.cs" />
     <Compile Include="Models\User.cs" />
+    <Compile Include="PdfBuilder.cs" />
     <Compile Include="Service1.svc.cs">
       <DependentUpon>Service1.svc</DependentUpon>
     </Compile>
@@ -143,9 +145,6 @@
     <Compile Include="Interfaces\ITicketService.cs" />
     <Compile Include="Services\ReservationService.svc.cs">
       <DependentUpon>ReservationService.svc</DependentUpon>
-    </Compile>
-    <Compile Include="Services\TicketService.svc.cs">
-      <DependentUpon>TicketService.svc</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -164,12 +163,6 @@
     <EmbeddedResource Include="Migrations\202005012346301_Init.resx">
       <DependentUpon>202005012346301_Init.cs</DependentUpon>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\PdfGen\PdfGen.csproj">
-      <Project>{69B9259C-B7C0-47DE-B7A9-EE67CEBF2D5A}</Project>
-      <Name>PdfGen</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

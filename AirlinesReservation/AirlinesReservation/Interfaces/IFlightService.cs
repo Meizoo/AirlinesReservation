@@ -16,7 +16,8 @@ namespace AirlinesReservation.Services
 
 		[OperationContract]
 		User Login(string username);
-
+		[OperationContract]
+		Reservation BuyTicket(User user, Flight flight, TicketType type);
 		//[OperationContract]
 		//List<Flight> ();
 	}

@@ -41,4 +41,20 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="BuyTicket">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/AirlinesReservation.Models" minOccurs="0" name="user" nillable="true" type="q4:User" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/AirlinesReservation.Models" minOccurs="0" name="flight" nillable="true" type="q5:Flight" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/AirlinesReservation.Models" minOccurs="0" name="type" type="q6:TicketType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BuyTicketResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/AirlinesReservation.Models" minOccurs="0" name="BuyTicketResult" nillable="true" type="q7:Reservation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>
