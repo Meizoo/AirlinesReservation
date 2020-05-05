@@ -6,6 +6,7 @@ using iText.Kernel.Font;
 using iText.Kernel.Pdf;
 using iText.Layout;
 using iText.Layout.Element;
+using iText.Layout.Properties;
 
 namespace PdfGen
 {
@@ -47,6 +48,16 @@ namespace PdfGen
 			else
 				this.currentParagraph.Add(new Text(text));
 			return this;
+		}
+
+		public PdfBuilder AddTable(params string[] cells)
+		{
+			Table table = new Table(UnitValue.CreatePercentArray(8)).UseAllAvailableWidth();
+
+			foreach (var i in cells)
+				table.AddCell(i);
+
+			doc.Add(table);
 		}
 
 		public PdfBuilder AddList(

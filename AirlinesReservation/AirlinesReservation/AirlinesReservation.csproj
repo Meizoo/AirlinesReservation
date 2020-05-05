@@ -165,6 +165,12 @@
       <DependentUpon>202005012346301_Init.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PdfGen\PdfGen.csproj">
+      <Project>{69B9259C-B7C0-47DE-B7A9-EE67CEBF2D5A}</Project>
+      <Name>PdfGen</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
