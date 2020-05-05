@@ -53,12 +53,12 @@ namespace AirlinesReservation.Services
 		public byte[] GetConfirmation(Guid number)
 		{
 			using (var context = new DataContext())
-			using (var pdf = new PdfBuilder("C:/Users/Dazit/source/repos/Meizoo/AirlinesReservation/AirlinesReservation/AirlinesReservation/bin/simple.pdf"))
+			using (var pdf = new PdfBuilder("D:/simple.pdf"))
 				try
 				{
 					var res = context.Reservations.FirstOrDefault(r => r.Number == number);
 					var flight = context.Flights.FirstOrDefault(f => f.Id == res.FlightId);
-					pdf.AddList($"To city: {flight.ToCity}, From city {flight.FromCity}, number: {res.Number}", "b\tb");
+					pdf.AddList(ListNumberingType.Decimal, $"To city: {flight.ToCity}, From city {flight.FromCity}, number: {res.Number}", "b\tb");
 
 					return Encoding.UTF8.GetBytes("Success");
 				}
