@@ -87,7 +87,11 @@ namespace AirlinesClient
                 {
                     this.selectedItem = (Flight)this.ListView.SelectedItems[0].Tag;
                     this.buyTicket.Visible = true;
-                    client.BuyTicket(this.user, this.selectedItem, TicketType.BusinessClass);
+
+                    if (client.BuyTicket(this.user, this.selectedItem, TicketType.BusinessClass))
+                        MessageBox.Show("Kupiono bilet");
+                    else
+                        MessageBox.Show("Wystąpił problem podczas kupowania biletu");
                 }
 
             }
